@@ -14,9 +14,16 @@
     # 4) Add new section to YAML file to commit updated README files
 
 ##### Update/generate README files #####
-autoREADME(dirREADME = "TestRepo/AnotherFolder")
-autoREADME(dirREADME = "TestRepo/TestFolder")
-autoREADME(dirREADME = "TestThis", title = "Test Title", description = "This is an example README generated in several steps to confirm that autoREADME function and associated GitHub action works correctly.")
+# Cod research track WG directories
+autoREADME(dirREADME = "Cod-Research-Track-Stock-Assessment/ToR1_Ecosystem_and_Climate")
+autoREADME(dirREADME = "Cod-Research-Track-Stock-Assessment/ToR2_Fishery_Data")
+autoREADME(dirREADME = "Cod-Research-Track-Stock-Assessment/ToR3_Survey_Data")
+autoREADME(dirREADME = "Cod-Research-Track-Stock-Assessment/ToR4_Assessment_Models")
+autoREADME(dirREADME = "Cod-Research-Track-Stock-Assessment/ToR5_Reference_Points")
+autoREADME(dirREADME = "Cod-Research-Track-Stock-Assessment/ToR6_Projections")
+autoREADME(dirREADME = "Cod-Research-Track-Stock-Assessment/ToR7_Research_Recommendations")
+autoREADME(dirREADME = "Cod-Research-Track-Stock-Assessment/ToR8_Plan_B")
+autoREADME(dirREADME = "Cod-Research-Track-Stock-Assessment/ToR9_StockStructure")
 
 ##### Debugging #####
 # If the GitHub action does not work try:
