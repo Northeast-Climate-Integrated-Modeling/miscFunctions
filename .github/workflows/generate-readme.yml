@@ -16,19 +16,11 @@ jobs:
   make-readme:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout other repos
+      - name: Checkout CodWG repo
         uses: actions/checkout@v3
         with:
-          repository: ahart1/TestRepo
-          path: TestRepo
-          token: ${{secrets.AUTOREADME_PAT}}
-          # Above needed if private repo (need to provide credentials to add)
-
-      - name: Checkout TestThis repo
-        uses: actions/checkout@v3
-        with:
-          repository: ahart1/TestThis
-          path: TestThis
+          repository: Northeast-Climate-Integrated-Modeling/Cod-Research-Track-Stock-Assessment
+          path: Cod-Research-Track-Stock-Assessment
           token: ${{secrets.AUTOREADME_PAT}}
 
       - name: Checkout current version of repo
@@ -55,22 +47,13 @@ jobs:
           source("main/makeREADMEScript.R")
         shell: Rscript {0}
 
-      - name: Commit files
+      - name: Commit files CodWG repo
         uses: EndBug/add-and-commit@v9
         with:
-          author_name: A. Hart
+          author_name: NCLIM Admin
           message: "Auto update/generate README file."
-          cwd: TestRepo
+          cwd: Cod-Research-Track-Stock-Assessment
           push: true
           github_token: ${{secrets.AUTOREADME_PAT}}
-       # Will need to periodically update personal access token (limited lifespan) & corresponding secrets
-
-      - name: Commit files TestThis repo
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: A. Hart
-          message: "Auto update/generate README file."
-          cwd: TestThis
-          push: true
-          github_token: ${{secrets.AUTOREADME_PAT}}
+       # May need to periodically update personal access token (limited lifespan) & corresponding secrets
 
